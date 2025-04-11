@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>FAIREST GAME EVER</title>
+    <!--VERSION 3-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p class="title">Quartz &centerdot; Parchment &centerdot; Shears</p>
+
+    <button onclick="
+        play('quartz');
+    " class="move-button">
+        <img src="images/quartz.png" class="move-icon" alt="quartz">
+    </button>
+
+    <button onclick="
+        play('parchment');
+
+    " class="move-button">
+        <img src="images/parchment.png" class="move-icon" alt="parchment">
+    </button>
+
+    <button onclick="
+        
+        play('shears');
+    " class="move-button">
+        <img src="images/shears.png" class="move-icon" alt="shears">
+    </button>
+
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score"></p>
+
+    <button onclick="
+        score.Wins=score.Losses=score.Ties=0;
+        localStorage.removeItem('score');    // LOCAL STORAGE REMOVE ITEM HERE
+        updateScoreElement();
+        document.querySelector('.js-result').innerHTML='';
+            document.querySelector('.js-moves').innerHTML='';
+    " class="main-buttons">
+        Reset Score
+    </button>
+
+    <button onclick="
+    autoPlay();
+    " class="main-buttons">
+      Auto Play
+    </button>
+
+    <script src="code.js"></script>
+
+    <!--
+        <a href="https://www.flaticon.com/free-icons/confidence" title="confidence icons">Confidence icons created by Vitaly Gorbachev - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/girl" title="girl icons">Girl icons created by Vitaly Gorbachev - Flaticon</a>
+    -->
+</body>
+</html>
