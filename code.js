@@ -34,6 +34,7 @@ let score= JSON.parse(localStorage.getItem('score')) || {  // LOCAL STORAGE GET 
   function play(playerSelection){
       const computerSelection = pickComputerMove();
       let result='';
+      let color='';
       let playerStatus='';
       let computerStatus='';
       if(playerSelection==='shears'){
@@ -75,21 +76,25 @@ let score= JSON.parse(localStorage.getItem('score')) || {  // LOCAL STORAGE GET 
           score.Wins++;
           playerStatus='winner';
           computerStatus='sad-pops';
+          color = 'green';
       }
       else if(result==='YOU LOSE!'){
           score.Losses++;
           playerStatus='loser';
           computerStatus='happy-pops';
+          color = 'red';
       }
       else{
           score.Ties++;
           playerStatus='neutral';
           computerStatus='happy-pops';
+          color = 'white';
       }
 
       localStorage.setItem('score', JSON.stringify(score)); // LOCAL STORAGE SET ITEM HERE
       updateScoreElement();
       document.querySelector('.js-result').innerHTML=result;
+      document.querySelector('.js-result').style.color = color;
       document.querySelector('.js-moves').innerHTML=`<img class="mood-icons" src="images/${playerStatus}.png" alt="player"> <img class="final-move-icon" src="images/${playerSelection}.png" alt="versus">
 <img class="versus-icon" src="images/versus-icon.png" alt="versus"> <img class="final-move-icon" src="images/${computerSelection}.png" alt="versus">
 <img class="mood-icons" src="images/${computerStatus}.png" alt="computer">`;
