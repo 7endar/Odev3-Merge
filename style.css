@@ -2,6 +2,7 @@ body{
   background-color: rgb(29, 29, 29);
   color: white;
   font-family: Arial;
+
 }
 .title{
   font-size: 30px;
@@ -49,4 +50,8 @@ body{
   height: 50px;
   /* border: 1px solid white;
   border-radius: 50px; */
+}
+
+.container {
+  text-align: center;
 }

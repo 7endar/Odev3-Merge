@@ -6,47 +6,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p class="title">Quartz &centerdot; Parchment &centerdot; Shears</p>
+    <div class="container">
+        <p class="title">Quartz &centerdot; Parchment &centerdot; Shears</p>
+    </div>
 
-    <button onclick="
-        play('quartz');
-    " class="move-button">
-        <img src="images/quartz.png" class="move-icon" alt="quartz">
-    </button>
+    <div class="container">
+        <button onclick="play('quartz');" class="move-button">
+            <img src="images/quartz.png" class="move-icon" alt="quartz">
+        </button>
 
-    <button onclick="
-        play('parchment');
+        <button onclick="play('parchment');" class="move-button">
+            <img src="images/parchment.png" class="move-icon" alt="parchment">
+        </button>
 
-    " class="move-button">
-        <img src="images/parchment.png" class="move-icon" alt="parchment">
-    </button>
+        <button onclick="play('shears');" class="move-button">
+            <img src="images/shears.png" class="move-icon" alt="shears">
+        </button>
+    </div>
 
-    <button onclick="
-        
-        play('shears');
-    " class="move-button">
-        <img src="images/shears.png" class="move-icon" alt="shears">
-    </button>
+    <div class="container">
+        <p class="js-result result"></p>
+        <p class="js-moves"></p>
+        <p class="js-score"></p>
+    </div>
 
-    <p class="js-result result"></p>
-    <p class="js-moves"></p>
-    <p class="js-score"></p>
+    <div class="container">
+        <button onclick="score.Wins=score.Losses=score.Ties=0;
+            localStorage.removeItem('score');    // LOCAL STORAGE REMOVE ITEM HERE
+            updateScoreElement();
+            document.querySelector('.js-result').innerHTML='';
+            document.querySelector('.js-moves').innerHTML='';" class="main-buttons">
+            Reset Score
+        </button>
 
-    <button onclick="
-        score.Wins=score.Losses=score.Ties=0;
-        localStorage.removeItem('score');    // LOCAL STORAGE REMOVE ITEM HERE
-        updateScoreElement();
-        document.querySelector('.js-result').innerHTML='';
-            document.querySelector('.js-moves').innerHTML='';
-    " class="main-buttons">
-        Reset Score
-    </button>
-
-    <button onclick="
-    autoPlay();
-    " class="main-buttons">
-      Auto Play
-    </button>
+        <button onclick="autoPlay();" class="main-buttons">
+          Auto Play
+        </button>
+    </div>
 
     <script src="code.js"></script>
 
